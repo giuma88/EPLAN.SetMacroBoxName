@@ -1,20 +1,24 @@
-﻿// V1:      nairolf         05.12.2010
-// V2:      Johann Weiher   07.12.2010
-// V2.1:    Johann Weiher   07.12.2010
-// V2.2:    nairolf         10.05.2011 
-// V3.0:	nairolf			16.05.2011
-// V3.1:	Straight-Potter	2012
-// V3.2:	FrankS			17.05.2013
+﻿// V1:      nairolf         	05.12.2010
+// V2:      Johann Weiher   	07.12.2010
+// V2.1:    Johann Weiher   	07.12.2010
+// V2.2:    nairolf         	10.05.2011 
+// V3.0:	nairolf				16.05.2011
+// V3.1:	Straight-Potter		2012
+// V3.2:	FrankS				17.05.2013
 // Makrokastenname aus Seitenstruktur setzen
+// V3.2.1:	Giulio Martella		06.05.2021
+// "." zwischen Artikelnummer und Hersteller wird nicht mehr durch "/" ersetzt
 
-// V1: nairolf 05.12.2010
-// V2: Johann Weiher 07.12.2010
-// V2.1: Johann Weiher 07.12.2010
-// V2.2: nairolf 10.05.2011
-// V3.0: nairolf 16.05.2011
-// V3.1: Straight Potter 2012
-// V3.2: FrankS 17.05.2013
+
+// V1: 		nairolf 			05.12.2010
+// V2: 		Johann Weiher 		07.12.2010
+// V2.1: 	Johann Weiher 		07.12.2010
+// V2.2: 	nairolf 			10.05.2011
+// V3.0: 	nairolf 			16.05.2011
+// V3.1: 	Straight Potter 	2012
+// V3.2: 	FrankS 				17.05.2013
 // set the macro box name from the page structure
+// V3.2.1:	Giulio Martella		06.05.2021
 
 using System.Windows.Forms;
 using Eplan.EplApi.ApplicationFramework;
@@ -155,7 +159,8 @@ public class SetMacroBoxName
 				return false;
 			}
 
-			sMacroBoxName = sMacroBoxName.Replace(".", @"\") + EXTENSION;
+			sMacroBoxName = sMacroBoxName.Replace(".", @".") + EXTENSION;
+			//falls "." zwischen Hersteller und Artikelnummer ersetzt werden sollte z.B. "/" setzen (MART 06.05.2021)
 			#endregion
 
 			//set macrobox: macroname
