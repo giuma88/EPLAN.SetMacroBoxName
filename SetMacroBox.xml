@@ -13,7 +13,7 @@
        <Default>
         <Val/>
        </Default>
-       <Val>SetMacroBoxName /EXTENSION:&quot;.ema&quot; /GETNAMEFROMLEVEL:&quot;2|4&quot;</Val>
+       <Val>SetMacroBoxName /EXTENSION:&quot;.ema&quot; /GETNAMEFROMLEVEL:&quot;1|2|3|4|6&quot;</Val>
       </Setting>
       <Setting name="ID" ver="1" type="unsigned int">
        <Default>
@@ -31,7 +31,7 @@
        <Default>
         <Val/>
        </Default>
-       <Val>Makrokasten: Windowmakroname setzen</Val>
+       <Val>Makrokasten: Fenstermakroname setzen</Val>
       </Setting>
      </LEV3>
      <LEV3 name="AdditionalToolbar-1">
@@ -39,7 +39,7 @@
        <Default>
         <Val/>
        </Default>
-       <Val>SetMacroBoxName /EXTENSION:&quot;.ems&quot; /GETNAMEFROMLEVEL:&quot;2|4&quot;</Val>
+       <Val>SetMacroBoxName /EXTENSION:&quot;.ems&quot; /GETNAMEFROMLEVEL:&quot;1|2|3|4|6&quot;</Val>
       </Setting>
       <Setting name="ID" ver="1" type="unsigned int">
        <Default>
