@@ -8,6 +8,8 @@
 // Makrokastenname aus Seitenstruktur setzen
 // V3.2.1:	Giulio Martella		06.05.2021
 // "." zwischen Artikelnummer und Hersteller wird nicht mehr durch "/" ersetzt
+// V3.2.2:  Giulio Martella		13.12.2021
+// "." in "+ Einbauort" wird durch "/" ersetzt
 
 
 // V1: 		nairolf 			05.12.2010
@@ -19,6 +21,7 @@
 // V3.2: 	FrankS 				17.05.2013
 // set the macro box name from the page structure
 // V3.2.1:	Giulio Martella		06.05.2021
+// V3.2.2:  Giulio Martella		13.12.2021
 
 using System.Windows.Forms;
 using Eplan.EplApi.ApplicationFramework;
@@ -101,10 +104,14 @@ public class SetMacroBoxName
 						if (sMacroBoxName.EndsWith(@"\"))
 						{
 							sMacroBoxName = sMacroBoxName + ExtractLevelName(sPageName, "+");
+							sMacroBoxName = sMacroBoxName.Replace(".", @"\");
+							//macht aus Punkt in "+" ein "/", somit wird ein neuer Ornder erstellt, z.B. "ET200SP_AUSGANGSMODULE.DIGITAL" wird zu "ET200SP_AUSGANGSMODULE/DIGITAL" 13.12.2021 / MART
 						}
 						else
 						{
 							sMacroBoxName = sMacroBoxName + "\\" + ExtractLevelName(sPageName, "+");
+							sMacroBoxName = sMacroBoxName.Replace(".", @"\");
+							//macht aus Punkt in "+" ein "/", somit wird ein neuer Ornder erstellt, z.B. "ET200SP_AUSGANGSMODULE.DIGITAL" wird zu "ET200SP_AUSGANGSMODULE/DIGITAL" 13.12.2021 / MART
 						}
 						break;
 					case "5":
